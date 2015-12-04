@@ -86,6 +86,16 @@ naive approach. Here are some quick benchmark results on my system running OS X.
     > %timeit -n 10000 einsum('ij,kj->ikj', A, B)
     10000 loops, best of 3: 2.84 µs per loop
 
+In the first approach creating a new array and reshaping it are additional operations that the *einsum*
+method doesn't have. So to get an idea about the time it takes to just multiply the rows using
+python list comprehension I ran the following benchmark:
+
+    > %timeit -n 10000 [A[i,:] * B[j,:] for i in range(A.shape[0]) for j in range(B.shape[0])]
+    10000 loops, best of 3: 22.4 µs per loop
+
+From the above it is clear that the bulk of the time is spent in looping, which is slow,
+rather than creating a numpy array and reshaping it.
+
 ## Concluding remarks
 The *einsum* function in numpy is a powerful construct that can be used
 to represent complex matrix operations in a compact way and can result
