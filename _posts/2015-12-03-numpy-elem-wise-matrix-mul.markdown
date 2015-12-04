@@ -7,7 +7,7 @@ date:   2015-12-03
 While working on a project I came across a situation where I had to do an element-wise 
 multiplication of rows of two matrices to produce a 3rd-order tensor. A few minutes of
 Googling did not give me an efficient solution. So here is a solution that is faster
-than the naive solution using python list comprehension.
+than the naive approach of using python list comprehension.
 
 ## Problem
 Let \\(\mathbf{A}\\) be a \\(m \times n\\) matrix and \\(\mathbf{B}\\) be a \\(p \times n\\) matrix.
