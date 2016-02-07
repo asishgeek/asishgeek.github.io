@@ -3,7 +3,7 @@ description: Personal webpage.
 
 url: http://asishgeek.github.io
 baseurl: ""
-paginate_path: "blog/page:num/"
+paginate_path: "/blog/page:num/"
 permalink: blog/:title/
 
 markdown: redcarpet
@@ -13,13 +13,13 @@ paginate: 5
 
 navigation:
  - title: Home
-   url: /index.html
+   url: /index
  - title: About
-   url: /about.html
- - title: Publications
-   url: /publications.html
- - title: Contact
-   url: /contact.html
+   url: /about
+ - title: Research
+   url: /publications
+ - title: Blog
+   url: /blog/index.html
 
 social:
    github: 
