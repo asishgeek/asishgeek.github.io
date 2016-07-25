@@ -9,14 +9,14 @@ title: Publications
 #### Pre-Prints
 * Ghoshal, Asish, and Jean Honorio.
 "Information-theoretic lower bounds on learning the structure of Bayesian networks." arXiv preprint arXiv:1601.07460 (2016).
+* Ghoshal, Asish, and Jean Honorio. "From Behavior to Sparse Graphical Games: Efficient Recovery of Equilibria." arXiv preprint arXiv:1607.02959 (2016).
 
 #### Journals
-Ghoshal, Asish et al. “MicroRNA Target Prediction Using Thermodynamic and Sequence Curves.” BMC Genomics 16 (2015): 999. PMC. Web. 7 Feb. 2016.
+* Ghoshal, Asish and Shankar, Raghavendran and Bagchi, Saurabh and Grama, Ananth and Chaterji, Somali "MicroRNA Target Prediction Using Thermodynamic and Sequence Curves." BMC Genomics 16 (2015): 999. PMC. Web. 7 Feb. 2016.
+* [To Appear] Asish Ghoshal, Jinyi Zhang, Michael A. Roth, Kevin Muyuan Xia, Ananth Grama, and Somali Chaterji "A Distributed Classifier for MicroRNA Target Prediction with Validation through TCGA Expression Data." IEEE/ACM Transactions on Computational Biology and Bioinformatics (TCBB) 2016.
 
 #### Peer-Reviewed Conferences
-* Nawanol Theera-Ampornpunt, Seong Gon Kim, Asish Ghoshal, Saurabh Bagchi, Ananth Grama and Somali Chaterji
-"Computational and network cost of training distributed Support Vector Machines for large genomics data."
-To appear in COMSNETS 2016.
+* Theera-Ampornpunt, Nawanol, Seong Gon Kim, Asish Ghoshal, Saurabh Bagchi, Ananth Grama, and Somali Chaterji. "Fast training on large genomics data using distributed Support Vector Machines." In 2016 8th International Conference on Communication Systems and Networks (COMSNETS), pp. 1-8. IEEE, 2016.
 
 * **[Best Paper Award]** Ghoshal, Asish, et al. "An ensemble SVM model for the accurate prediction of non-canonical MicroRNA targets." Proceedings of the 6th ACM Conference on Bioinformatics, Computational Biology and Health Informatics. ACM, 2015.
 
