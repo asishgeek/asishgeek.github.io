@@ -6,9 +6,15 @@ title: Asish Ghoshal
 	<h1 class="pageTitle">Recent News</h1>
 </div>
 
+#### August 9, 2016
+Our paper on recovering the Nash equilibria set of graphical games from
+observations of purely behavioral data, has been accepted to *Allerton 2016*.
+The manuscript can be read [here](http://arxiv.org/abs/1607.02959).
+
 #### July 10, 2016
 New manuscript on recovering the pure-strategy Nash equlibria set of graphical games
-from observations of purely behavioral data. The manuscript can be read [here](http://arxiv.org/abs/1607.02959)
+from observations of purely behavioral data. 
+The manuscript can be read [here](http://arxiv.org/abs/1607.02959).
 
 #### January 27, 2016
 New manuscript on the information theoretic limits of learning Bayesian networks.
