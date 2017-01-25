@@ -6,6 +6,11 @@ title: Asish Ghoshal
 	<h1 class="pageTitle">Recent News</h1>
 </div>
 
+#### January 25, 2017
+Two papers accepted to AISTATS 2017. The first paper in about information-theoretic limits
+of learning Bayesian networks, while the second paper concerns with necessary and sufficient conditions
+for learning graphical games. Links to manuscripts coming soon.
+
 #### August 9, 2016
 Our paper on recovering the Nash equilibria set of graphical games from
 observations of purely behavioral data, has been accepted to *Allerton 2016*.
