@@ -6,6 +6,9 @@ title: Asish Ghoshal
 	<h1 class="pageTitle">Recent News</h1>
 </div>
 
+#### February 1, 2017
+Will be in Seattle from Feb 1st - Feb 3rd for the Facebook PhD Machine Learning Summit. Thanks Facebook for the hospitality.
+
 #### January 25, 2017
 Two papers accepted to AISTATS 2017. The first paper in about information-theoretic limits
 of learning Bayesian networks, while the second paper concerns with necessary and sufficient conditions
