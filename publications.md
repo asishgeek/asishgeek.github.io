@@ -6,6 +6,9 @@ title: Publications
 	<h1 class="pageTitle">Publications</h1>
 </div>
 
+#### Pre-prints
+* *Ghoshal A.* and Honorio J. ["Learning Identifiable Gaussian Bayesian Networks in Polynomial Time and Sample Complexity"](https://arxiv.org/abs/1703.01196).
+
 #### Peer-Reviewed Conferences
 * [To Appear] *Ghoshal A.* and Honorio J.
 ["Information-theoretic Limits of Bayesian Networks Structure Learning."](https://arxiv.org/abs/1601.07460) Artificial Intelligence and Statistics (AISTATS), Florida, 2017.
