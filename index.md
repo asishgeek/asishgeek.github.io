@@ -6,6 +6,9 @@ title: Asish Ghoshal
 	<h1 class="pageTitle">Recent News</h1>
 </div>
 
+#### April 16, 2017
+I received a travel award to attend AISTATS'17 at Fort Lauderdale, FL. I am thankful to the AISTATS organizers for selecting me for the award.
+
 #### March 08, 2017
 New manuscript on learning the DAG structure of equal noise-variance Gaussian Bayesian networks exactly in polynomial time.
 The manuscript can be read [here](https://arxiv.org/abs/1703.01196)
