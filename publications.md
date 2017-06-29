@@ -8,6 +8,7 @@ title: Publications
 
 #### Pre-prints
 * *Ghoshal A.* and Honorio J. ["Learning Identifiable Gaussian Bayesian Networks in Polynomial Time and Sample Complexity"](https://arxiv.org/abs/1703.01196).
+* *Ghoshal A.* and Honorio J. ["Learning Sparse Potential Games in Polynomial Time and Sample Complexity"](https://arxiv.org/abs/1706.05648).
 
 #### Peer-Reviewed Conferences
 * [To Appear] *Ghoshal A.* and Honorio J.
