@@ -7,15 +7,16 @@ title: Publications
 </div>
 
 #### Pre-prints
-* *Ghoshal A.* and Honorio J. ["Learning Identifiable Gaussian Bayesian Networks in Polynomial Time and Sample Complexity"](https://arxiv.org/abs/1703.01196).
+* *Ghoshal A.* and Honorio J. ["Learning linear structural equation models in polynomial time and sample complexity"](https://arxiv.org/abs/1707.04673).
 * *Ghoshal A.* and Honorio J. ["Learning Sparse Potential Games in Polynomial Time and Sample Complexity"](https://arxiv.org/abs/1706.05648).
+* *Ghoshal A.* and Honorio J. ["Learning Identifiable Gaussian Bayesian Networks in Polynomial Time and Sample Complexity"](https://arxiv.org/abs/1703.01196).
 
 #### Peer-Reviewed Conferences
-* [To Appear] *Ghoshal A.* and Honorio J.
-["Information-theoretic Limits of Bayesian Networks Structure Learning."](https://arxiv.org/abs/1601.07460) Artificial Intelligence and Statistics (AISTATS), Florida, 2017.
+* *Ghoshal A.* and Honorio J.
+["Information-theoretic Limits of Bayesian Networks Structure Learning."](http://proceedings.mlr.press/v54/ghoshal17a.html) Artificial Intelligence and Statistics (AISTATS), Florida, 2017. \[[arxiv](https://arxiv.org/abs/1601.07460)\]
 
-* [To Appear] *Ghoshal A.* and Honorio J.
-"Learning Graphical Games from Behavioral Data: Sufficient and Necessary Conditions". Artificial Intelligence and Statistics (AISTATS), Florida, 2017.
+* *Ghoshal A.* and Honorio J.
+["Learning Graphical Games from Behavioral Data: Sufficient and Necessary Conditions"](http://proceedings.mlr.press/v54/ghoshal17b.html). Artificial Intelligence and Statistics (AISTATS), Florida, 2017. \[[arxiv](https://arxiv.org/abs/1703.01218)\]
 
 * *Ghoshal A.* and Honorio, J. ["From Behavior to Sparse Graphical Games: Efficient Recovery of Equilibria."](https://arxiv.org/abs/1607.02959) Allerton Conference on Communication, Control, and Computing (Allerton), IEEE. Allerton IL, 2016.
 
