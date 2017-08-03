@@ -10,10 +10,10 @@ Googling did not give me an efficient solution. So here is a solution that is fa
 than the naive approach of using python list comprehension.
 
 ## Problem
-Let \\(\mathbf{A}\\) be a \\(m \times n\\) matrix and \\(\mathbf{B}\\) be a \\(p \times n\\) matrix.
-We want a \\(m \times p \times n\\) tensor \\(\mathbf{C}\\) such that 
-\\(\mathbf{C}\_{i,j} = \mathbf{A}\_i \circ \mathbf{B}\_j \\),
-where \\(\mathbf{A}\_i\\) is the i-th row of A and \\(\mathbf{B}\_j\\) is the j-th row of B.
+Let $$\mathbf{A}$$ be a $$m \times n$$ matrix and $$\mathbf{B}$$ be a $$p \times n$$ matrix.
+We want a $$m \times p \times n$$ tensor $$\mathbf{C}$$ such that 
+$$\mathbf{C}_{i,j} = \mathbf{A}_{i} \circ \mathbf{B}_{j} $$,
+where $$\mathbf{A}_i$$ is the i-th row of A and $$\mathbf{B}_j$$ is the j-th row of B.
 
 ## Solution
 Assume we have the following matrices:

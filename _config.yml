@@ -1,30 +1,112 @@
-title: Asish Ghoshal
-description: Personal webpage.
+# -----------------------------------------------------------------------------
+# Site settings
+# -----------------------------------------------------------------------------
+name: Asish Ghoshal
+email: aghoshal@purdue.com
+description: > # this means to ignore newlines until "url:"
+  Asish Ghoshal.
+footer_text: >
+  Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
 
-url: http://asishgeek.github.io
-baseurl: ""
-paginate_path: "/blog/page:num/"
-permalink: blog/:title/
+url:  http://asishghoshal.com # the base hostname & protocol for your site
+baseurl: # the subpath of your site, e.g. /blog/
+last_updated: July 31, 2017
 
+# -----------------------------------------------------------------------------
+# Social integration
+# -----------------------------------------------------------------------------
+github_username: # put your github username
+twitter_username: # put your twitter username
+linkedin_username: # put your linkedin username
+scholar_authorid: # put your google scholar author id
+contact_note: >
+#  You can even add a little note about which of these is the best way to reach you.
+
+# -----------------------------------------------------------------------------
+# Blog
+# -----------------------------------------------------------------------------
+blog_name: 
+blog_description: 
+
+# Pagination
+paginate: 4
+permalink: /blog/:year/:title/
+paginate_path: /blog/page:num/
+
+text:
+  pagination:
+    newer: 'Newer'
+    older: 'Older'
+
+# Comments
+disqus_shortname: al-folio # put your disqus shortname
+
+# Optional features
+show_social_icons:  false
+enable_anchorjs:    false
+enable_katex:       true
+
+# -----------------------------------------------------------------------------
+# Collections
+# -----------------------------------------------------------------------------
+collections:
+  news:
+    defaults:
+      layout: post
+    output: true
+    permalink: /news/:path/
+
+news_limit: 4
+
+# -----------------------------------------------------------------------------
+# Jekyll settings
+# -----------------------------------------------------------------------------
+
+# Build settings
 markdown: kramdown
-highlighter: rouge
-gems: [jekyll-paginate]
-paginate: 5
+highlighter: pygments
 
-navigation:
- - title: Home
-   url: /index
- - title: About
-   url: /about
- - title: Research
-   url: /publications
- - title: Blog
-   url: /blog/index.html
+# Includes
+include: ['_pages']
 
-social:
-   github: 
-   twitter: 
-   facebook: 
-   email: a[full last name]@gmail.com
+# Gems
+gems:
+    - jekyll-paginate
+    - jekyll/scholar
+    - jemoji
 
+# Jekyll-Scholar
+scholar:
+
+  last_name: Ghoshal
+
+  style: apa
+  locale: en
+
+  sort_by: year
+  order: descending
+
+  source: /_bibliography/
+  bibliography: papers.bib
+  bibliography_template: bib
+
+  replace_strings: true
+  join_strings: true
+
+  details_dir: bibliography
+  details_layout: bibtex.html
+  details_link: Details
+
+  query: "@*"
+
+# -----------------------------------------------------------------------------
+# Other settings
+# -----------------------------------------------------------------------------
+jquery_version: "1.12.4"
+katex_version: "0.7.1"
+anchorjs_version: "3.2.2"
+
+# ------------------------------
+# Google analytics
+# ------------------------------
 google_analytics: UA-73077954-1

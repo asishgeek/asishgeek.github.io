@@ -1,16 +1,36 @@
- <div class="header">
-     <div class="container">
-         <h1 class="logo"><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
-         <nav class="nav-collapse">
-             <ul class="noList">
-                 {% for link in site.navigation %}{% assign current = nil %}{% if page.url contains link.url %}{% assign current = 'current' %}{% endif %}
-                 <li class="element {% if forloop.first %}first{% endif %} {{ current }} {% if forloop.last %}last{% endif %}">
-                     <a href="{{ link.url | prepend: site.baseurl }}">{{ link.title }}</a>
-                 </li> 
-                 {% endfor %}
-                 <!-- <li> <a href="https://github.com/brianmaierjr/long-haul" target="_blank">GitHub</a></li>
-                 <li><a href="https://github.com/brianmaierjr/long-haul/archive/master.zip">Download Theme</a></li> -->
-             </ul>
-         </nav>
-     </div>
- </div><!-- end .header -->
+<header class="site-header">
+
+  <div class="wrapper">
+
+    {% if page.layout != "about" %}
+    <span class="site-title">
+        {% assign name = site.name | split: ' ' %}
+        <strong>{{ name | first }}</strong> {{ name | last }}
+    </span>
+    {% endif %}
+
+    <nav class="site-nav">
+
+      <div class="trigger">
+        <!-- About -->
+        <a class="page-link" href="{{ site.baseurl | prepend: site.url }}/">about</a>
+
+        <!-- Pages -->
+        {% for page in site.pages %}
+          {% if page.title and page.url != "/" %}
+            <a class="page-link" href="{{ page.url | prepend: site.baseurl | prepend: site.url }}">{{ page.title }}</a>
+          {% endif %}
+        {% endfor %}
+
+        <!-- Blog -->
+        <a class="page-link" href="{{ '/blog/' | prepend: site.baseurl | prepend: site.url }}">blog</a>
+
+        <!-- CV link -->
+        <!-- <a class="page-link" href="{{ '/assets/pdf/CV.pdf' | prepend: site.baseurl | prepend: site.url }}">vitae</a> -->
+
+      </div>
+    </nav>
+
+  </div>
+
+</header>
