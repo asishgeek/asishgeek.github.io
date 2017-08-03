@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Asish Ghoshal | Numpy tricks: Element-wise multplication of rows of two matrices</title>
+  <meta name="description" content="Asish Ghoshal.
+">
+
+  <link rel="shortcut icon" href="http://asishghoshal.com/assets/img/favicon.ico">
+
+  <link rel="stylesheet" href="http://asishghoshal.com/assets/css/main.css">
+  <link rel="canonical" href="http://asishghoshal.com/blog/2015/numpy-elem-wise-matrix-mul/">
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    
+    <span class="site-title">
+        
+        <strong>Asish</strong> Ghoshal
+    </span>
+    
+
+    <nav class="site-nav">
+
+      <div class="trigger">
+        <!-- About -->
+        <a class="page-link" href="http://asishghoshal.com/">about</a>
+
+        <!-- Pages -->
+        
+          
+        
+          
+        
+          
+        
+          
+            <a class="page-link" href="http://asishghoshal.com/publications/">publications</a>
+          
+        
+
+        <!-- Blog -->
+        <a class="page-link" href="http://asishghoshal.com/blog/">blog</a>
+
+        <!-- CV link -->
+        <!-- <a class="page-link" href="http://asishghoshal.com/assets/pdf/CV.pdf">vitae</a> -->
+
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Numpy tricks: Element-wise multplication of rows of two matrices</h1>
+    <p class="post-meta">December 3, 2015</p>
+  </header>
+
+  <article class="post-content">
+    <p>While working on a project I came across a situation where I had to do an element-wise 
+multiplication of rows of two matrices to produce a 3rd-order tensor. A few minutes of
+Googling did not give me an efficient solution. So here is a solution that is faster
+than the naive approach of using python list comprehension.</p>
+
+<h2 id="problem">Problem</h2>
+<p>Let <script type="math/tex">\mathbf{A}</script> be a <script type="math/tex">m \times n</script> matrix and <script type="math/tex">\mathbf{B}</script> be a <script type="math/tex">p \times n</script> matrix.
+We want a <script type="math/tex">m \times p \times n</script> tensor <script type="math/tex">\mathbf{C}</script> such that 
+<script type="math/tex">\mathbf{C}_{i,j} = \mathbf{A}_{i} \circ \mathbf{B}_{j}</script>,
+where <script type="math/tex">\mathbf{A}_i</script> is the i-th row of A and <script type="math/tex">\mathbf{B}_j</script> is the j-th row of B.</p>
+
+<h2 id="solution">Solution</h2>
+<p>Assume we have the following matrices:</p>
+
+<figure class="highlight"><pre><code class="language-numpy" data-lang="numpy">    &gt; A = np.array([[1, 1, 1], [2, 2, 2], [3, 3, 3]])
+    &gt; A
+    array([[1, 1, 1],
+           [2, 2, 2],
+           [3, 3, 3]])
+
+    &gt; B = arange(12).reshape((4,3))
+    &gt; B
+    array([[ 0,  1,  2],
+           [ 3,  4,  5],
+           [ 6,  7,  8],
+           [ 9, 10, 11]])</code></pre></figure>
+
+<h3 id="naive-solution">Naive solution</h3>
+<p>The following uses python list comprehension:</p>
+
+<figure class="highlight"><pre><code class="language-numpy" data-lang="numpy">    &gt; C = np.array([A[i,:] * B[j,:] for i in range(A.shape[0]) 
+            for j in range(B.shape[0])]).reshape(
+            (A.shape[0], B.shape[0], A.shape[1]))
+    &gt; C
+    array([[[ 0,  1,  2],
+            [ 3,  4,  5],
+            [ 6,  7,  8],
+            [ 9, 10, 11]],
+
+           [[ 0,  2,  4],
+            [ 6,  8, 10],
+            [12, 14, 16],
+            [18, 20, 22]],
+
+           [[ 0,  3,  6],
+            [ 9, 12, 15],
+            [18, 21, 24],
+            [27, 30, 33]]])       
+    &gt; C[2,3]
+    array([27, 30, 33])</code></pre></figure>
+
+<h3 id="solution-using-einsum">Solution using einsum</h3>
+<p>The following uses <a href="https://en.wikipedia.org/wiki/Einstein_notation">Einstein notation</a> function
+<em>einsum</em> of numpy:</p>
+
+<figure class="highlight"><pre><code class="language-numpy" data-lang="numpy">    &gt; C = einsum('ij,kj-&gt;ikj', A, B)
+    &gt; C 
+    array([[[ 0,  1,  2],
+            [ 3,  4,  5],
+            [ 6,  7,  8],
+            [ 9, 10, 11]],
+
+           [[ 0,  2,  4],
+            [ 6,  8, 10],
+            [12, 14, 16],
+            [18, 20, 22]],
+
+           [[ 0,  3,  6],
+            [ 9, 12, 15],
+            [18, 21, 24],
+            [27, 30, 33]]])       </code></pre></figure>
+
+<h2 id="performance">Performance</h2>
+<p>Not only is the einsum approach much shorter, it is also about 10 times faster than the
+naive approach. Here are some quick benchmark results on my system running OS X.</p>
+
+<figure class="highlight"><pre><code class="language-numpy" data-lang="numpy">    &gt; %timeit -n 10000 array([A[i,:] * B[j,:] for i in range(A.shape[0]) for j in range(B.shape[0])]).reshape((A.shape[0], B.shape[0], A.shape[1]))
+    10000 loops, best of 3: 28.9 µs per loop
+
+    &gt; %timeit -n 10000 einsum('ij,kj-&gt;ikj', A, B)
+    10000 loops, best of 3: 2.84 µs per loop</code></pre></figure>
+
+<p>In the first approach creating a new array and reshaping it are additional operations that the <em>einsum</em>
+method doesn’t have. So to get an idea about the time it takes to just multiply the rows using
+python list comprehension I ran the following benchmark:</p>
+
+<figure class="highlight"><pre><code class="language-numpy" data-lang="numpy">    &gt; %timeit -n 10000 [A[i,:] * B[j,:] for i in range(A.shape[0]) for j in range(B.shape[0])]
+    10000 loops, best of 3: 22.4 µs per loop</code></pre></figure>
+
+<p>From the above it is clear that the bulk of the time is spent in looping, which is slow,
+rather than creating a numpy array and reshaping it.</p>
+
+<h2 id="concluding-remarks">Concluding remarks</h2>
+<p>The <em>einsum</em> function in numpy is a powerful construct that can be used
+to represent complex matrix operations in a compact way and can result
+in significant performance improvement over loops. It is
+worth learning the Einstein sum notation, even for it’s own sake — it 
+is pretty cool after all.</p>
+
+  </article>
+
+  
+
+</div>
+
+      </div>
+    </div>
+
+    <footer>
+
+  <div class="wrapper">
+    &copy; Copyright 2017 Asish Ghoshal.
+    Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
+
+    
+        Last updated: July 31, 2017.
+    
+  </div>
+
+</footer>
+
+
+    <!-- Load jQuery -->
+<script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
+
+<!-- Load Common JS -->
+<script src="http://asishghoshal.com/assets/js/common.js"></script>
+
+
+<!-- Load KaTeX -->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js"></script>
+<script src="http://asishghoshal.com/assets/js/katex.js"></script>
+
+
+
+
+<!-- Include custom icon fonts -->
+<link rel="stylesheet" href="http://asishghoshal.com/assets/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://asishghoshal.com/assets/css/academicons.min.css">
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-73077954-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+  </body>
+
+</html>
