@@ -88,11 +88,11 @@ In what follows, I will describe the <a href="https://bitbucket.org/asish_geek/m
 
 <h2 id="getting-started">Getting started.</h2>
 <p>Unlike Tikzposter and Beamer poster, content in <em>minimalposter</em> is organized in columns. Therefore, the first thing
-one needs to decide before creating is a poster is the orientation, i.e., potrait or landscape, and the number of columns.
+one needs to decide before creating a poster is the orientation, i.e., potrait or landscape, and the number of columns.
 Let’s say we want to design a landscape mode poster with three columns. The middle column contains the highlight of the poster, for
-example the main results, and therefore should be wider than the first and last columns. We, therefore, decide on a 2:3:2 ratio
+example, the main results, and therefore should be wider than the first and last columns. We, therefore, decide on a 2:3:2 ratio
 for the width of the columns. In <em>minimalposter</em> we can accomplish this by creating seven (2+3+2) <em>logical columns</em>. The purpose
-of the <em>logical columns</em> will become clear later. For now, we our <code class="highlighter-rouge">poster.tex</code> contains the following lines:</p>
+of the <em>logical columns</em> will become clear later. For now, our <code class="highlighter-rouge">poster.tex</code> contains the following lines:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="k">\documentclass</span><span class="na">[a0,final]</span><span class="p">{</span>a0poster<span class="p">}</span>
 <span class="k">\usepackage</span><span class="na">[columns=7]</span><span class="p">{</span>minimalposter<span class="p">}</span>
@@ -146,6 +146,8 @@ three columns with actual widths 2, 3 and 2, respectively.</p>
 \BeginColumn[2]
 ...
 \EndColumn
+
+\end{document}
 </code></pre>
 </div>
 
@@ -185,7 +187,8 @@ changed using the command:</p>
 
 <p>A larger number pushes the top of the columns further down.</p>
 
-<p>The following is a demo poster created using <em>minimalposter</em> using the default theme.
+<p>Using a simple columnar layout, with variable column widths, and standard LaTeX constructs, it is possible to
+create sleek posters in LaTeX in quick time. The following is a demo poster created using <em>minimalposter</em> using the default theme.
 A complete example is given <a href="https://bitbucket.org/asish_geek/minimalposter/raw/master/examples/landscape/poster.tex">here</a></p>
 
 <div class="img_auto">
