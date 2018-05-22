@@ -2,6 +2,7 @@
 
 bundle exec jekyll build --destination ../asishgeek.github.io
 
+cp CNAME ../asishgeek.github.io/
 cd ../asishgeek.github.io
 
 git add -A
