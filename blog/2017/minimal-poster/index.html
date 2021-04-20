@@ -10,10 +10,10 @@
   <meta name="description" content="Asish Ghoshal.
 ">
 
-  <link rel="shortcut icon" href="http://asishghoshal.com/assets/img/favicon.ico">
+  <link rel="shortcut icon" href="http://asishghoshal.info/assets/img/favicon.ico">
 
-  <link rel="stylesheet" href="http://asishghoshal.com/assets/css/main.css">
-  <link rel="canonical" href="http://asishghoshal.com/blog/2017/minimal-poster/">
+  <link rel="stylesheet" href="http://asishghoshal.info/assets/css/main.css">
+  <link rel="canonical" href="http://asishghoshal.info/blog/2017/minimal-poster/">
 </head>
 
 
@@ -34,7 +34,7 @@
 
       <div class="trigger">
         <!-- About -->
-        <a class="page-link" href="http://asishghoshal.com/">about</a>
+        <a class="page-link" href="http://asishghoshal.info/">about</a>
 
         <!-- Pages -->
         
@@ -45,17 +45,15 @@
           
         
           
-            <a class="page-link" href="http://asishghoshal.com/publications/">publications</a>
-          
-        
+            <a class="page-link" href="http://asishghoshal.info/publications/">publications</a>
           
         
 
         <!-- Blog -->
-        <a class="page-link" href="http://asishghoshal.com/blog/">blog</a>
+        <a class="page-link" href="http://asishghoshal.info/blog/">blog</a>
 
         <!-- CV link -->
-        <!-- <a class="page-link" href="http://asishghoshal.com/assets/pdf/CV.pdf">vitae</a> -->
+        <!-- <a class="page-link" href="http://asishghoshal.info/assets/pdf/CV.pdf">vitae</a> -->
 
       </div>
     </nav>
@@ -94,47 +92,47 @@ one needs to decide before creating a poster is the orientation, i.e., potrait o
 Let’s say we want to design a landscape mode poster with three columns. The middle column contains the highlight of the poster, for
 example, the main results, and therefore should be wider than the first and last columns. We, therefore, decide on a 2:3:2 ratio
 for the width of the columns. In <em>minimalposter</em> we can accomplish this by creating seven (2+3+2) <em>logical columns</em>. The purpose
-of the <em>logical columns</em> will become clear later. For now, our <code class="highlighter-rouge">poster.tex</code> contains the following lines:</p>
+of the <em>logical columns</em> will become clear later. For now, our <code>poster.tex</code> contains the following lines:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\documentclass</span><span class="na">[a0,final]</span><span class="p">{</span>a0poster<span class="p">}</span>
-<span class="k">\usepackage</span><span class="na">[columns=7]</span><span class="p">{</span>minimalposter<span class="p">}</span>
-</code></pre></div></div>
+<pre><code>\documentclass[a0,final]{a0poster}
+\usepackage[columns=7]{minimalposter}
+</code></pre>
 
-<p>For creating a potrait mode poster, one would instead use the following: <code class="highlighter-rouge"><span class="k">\documentclass</span><span class="na">[a0,portrait,final]</span><span class="p">{</span>a0poster<span class="p">}</span></code>.
+<p>For creating a potrait mode poster, one would instead use the following: <code>\documentclass[a0,portrait,final]{a0poster}</code>.
 Other options accepted by the package are: hmargin and vmargin, which control the horizontal and vertical margin
-respectively. For example, <code class="highlighter-rouge">\usepackage[columns=7,hmargin=20mm]{minimalposter}</code> creates a poster with 20mm margins on the sides.</p>
+respectively. For example, <code>\usepackage[columns=7,hmargin=20mm]{minimalposter}</code> creates a poster with 20mm margins on the sides.</p>
 
 <h2 id="title-authors-and-such">Title, authors and such.</h2>
 <p>Next, we need to set up the title area of the poster. This can be done as follows:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\title{MinimalPoster: A Package for Creating Minimal \LaTeX{} Posters}
+<pre><code>\title{MinimalPoster: A Package for Creating Minimal \LaTeX{} Posters}
 \author{Asish Ghoshal \\ aghoshal@purdue.edu\\
 Department of Computer Science, Purdue University,
 West Lafayette - IN, 47907.}
-</code></pre></div></div>
+</code></pre>
 
 <p>The title area can also include a logo, for instance, the logo of the institute where the work was done. This is done
-by adding the following in <code class="highlighter-rouge">poster.tex</code>:</p>
+by adding the following in <code>poster.tex</code>:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\logo{\includegraphics[scale=1.0]{logo.pdf}}
-</code></pre></div></div>
+<pre><code>\logo{\includegraphics[scale=1.0]{logo.pdf}}
+</code></pre>
 
-<p>The footer is set up by the <code class="highlighter-rouge">\thanks</code> command, which can also include an image as above.</p>
+<p>The footer is set up by the <code>\thanks</code> command, which can also include an image as above.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\thanks{This work was funded by ...}
-</code></pre></div></div>
+<pre><code>\thanks{This work was funded by ...}
+</code></pre>
 
-<p>We then add the following lines in <code class="highlighter-rouge">poster.tex</code> to actually create the title and start the main body of the poster.</p>
+<p>We then add the following lines in <code>poster.tex</code> to actually create the title and start the main body of the poster.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\begin{document}
+<pre><code>\begin{document}
 \maketitle
-</code></pre></div></div>
+</code></pre>
 
 <h2 id="the-content">The content.</h2>
 <p>As mentioned before, content is organized into columns. Since we have decided on a 2:3:2 layout. We will create
 three columns with actual widths 2, 3 and 2, respectively.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\BeginColumn[2]
+<pre><code>\BeginColumn[2]
 ...
 \EndColumn
 
@@ -147,7 +145,7 @@ three columns with actual widths 2, 3 and 2, respectively.</p>
 \EndColumn
 
 \end{document}
-</code></pre></div></div>
+</code></pre>
 
 <p>Within each column, content is oranized into standard LaTex sections and subsections. From this point onwards,
 there is no difference between a poster and a standard LaTex document.
@@ -156,18 +154,18 @@ columns.</p>
 
 <h2 id="sections">Sections.</h2>
 <p>Section headings are by default left aligned. Let’s say we want the section headings to be center aligned. 
-This can be accomplished by passing the option <code class="highlighter-rouge">calign</code> to the package:</p>
+This can be accomplished by passing the option <code>calign</code> to the package:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\usepackage[columns=7, calign]{minimalposter}
-</code></pre></div></div>
+<pre><code>\usepackage[columns=7, calign]{minimalposter}
+</code></pre>
 
-<p>The option for right alignment is, unsurprisingly, <code class="highlighter-rouge">ralign</code>.</p>
+<p>The option for right alignment is, unsurprisingly, <code>ralign</code>.</p>
 
 <h2 id="highlights">Highlights.</h2>
-<p>One can highlight certain areas of the posters, for instance, theorems, figures or tables using the <code class="highlighter-rouge">\Alert</code> command as follows:</p>
+<p>One can highlight certain areas of the posters, for instance, theorems, figures or tables using the <code>\Alert</code> command as follows:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\Alert{Drinking coffee can lead to a longer life.}
-</code></pre></div></div>
+<pre><code>\Alert{Drinking coffee can lead to a longer life.}
+</code></pre>
 
 <p>The above command results in a box around the text.</p>
 
@@ -177,8 +175,8 @@ are: fury, greed, calm, dirty and fear. Additional color themes can be easily cr
 of the title area, the top of the columns can either be too close or too far from the title area. This can be
 changed using the command:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\columntop{1}
-</code></pre></div></div>
+<pre><code>\columntop{1}
+</code></pre>
 
 <p>A larger number pushes the top of the columns further down.</p>
 
@@ -202,7 +200,7 @@ A complete example is given <a href="https://bitbucket.org/asish_geek/minimalpos
     <footer>
 
   <div class="wrapper">
-    &copy; Copyright 2018 Asish Ghoshal.
+    &copy; Copyright 2021 Asish Ghoshal.
     Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with a modified <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
 
     
@@ -217,20 +215,20 @@ A complete example is given <a href="https://bitbucket.org/asish_geek/minimalpos
 <script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
 
 <!-- Load Common JS -->
-<script src="http://asishghoshal.com/assets/js/common.js"></script>
+<script src="http://asishghoshal.info/assets/js/common.js"></script>
 
 
 <!-- Load KaTeX -->
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js"></script>
-<script src="http://asishghoshal.com/assets/js/katex.js"></script>
+<script src="http://asishghoshal.info/assets/js/katex.js"></script>
 
 
 
 
 <!-- Include custom icon fonts -->
-<link rel="stylesheet" href="http://asishghoshal.com/assets/css/font-awesome.min.css">
-<link rel="stylesheet" href="http://asishghoshal.com/assets/css/academicons.min.css">
+<link rel="stylesheet" href="http://asishghoshal.info/assets/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://asishghoshal.info/assets/css/academicons.min.css">
 
 <!-- Google Analytics -->
 <script>

@@ -10,10 +10,10 @@
   <meta name="description" content="Asish Ghoshal.
 ">
 
-  <link rel="shortcut icon" href="http://asishghoshal.com/assets/img/favicon.ico">
+  <link rel="shortcut icon" href="http://asishghoshal.info/assets/img/favicon.ico">
 
-  <link rel="stylesheet" href="http://asishghoshal.com/assets/css/main.css">
-  <link rel="canonical" href="http://asishghoshal.com/blog/2015/numpy-elem-wise-matrix-mul/">
+  <link rel="stylesheet" href="http://asishghoshal.info/assets/css/main.css">
+  <link rel="canonical" href="http://asishghoshal.info/blog/2015/numpy-elem-wise-matrix-mul/">
 </head>
 
 
@@ -34,7 +34,7 @@
 
       <div class="trigger">
         <!-- About -->
-        <a class="page-link" href="http://asishghoshal.com/">about</a>
+        <a class="page-link" href="http://asishghoshal.info/">about</a>
 
         <!-- Pages -->
         
@@ -45,17 +45,15 @@
           
         
           
-            <a class="page-link" href="http://asishghoshal.com/publications/">publications</a>
-          
-        
+            <a class="page-link" href="http://asishghoshal.info/publications/">publications</a>
           
         
 
         <!-- Blog -->
-        <a class="page-link" href="http://asishghoshal.com/blog/">blog</a>
+        <a class="page-link" href="http://asishghoshal.info/blog/">blog</a>
 
         <!-- CV link -->
-        <!-- <a class="page-link" href="http://asishghoshal.com/assets/pdf/CV.pdf">vitae</a> -->
+        <!-- <a class="page-link" href="http://asishghoshal.info/assets/pdf/CV.pdf">vitae</a> -->
 
       </div>
     </nav>
@@ -82,10 +80,10 @@ Googling did not give me an efficient solution. So here is a solution that is fa
 than the naive approach of using python list comprehension.</p>
 
 <h2 id="problem">Problem</h2>
-<p>Let <script type="math/tex">\mathbf{A}</script> be a <script type="math/tex">m \times n</script> matrix and <script type="math/tex">\mathbf{B}</script> be a <script type="math/tex">p \times n</script> matrix.
-We want a <script type="math/tex">m \times p \times n</script> tensor <script type="math/tex">\mathbf{C}</script> such that 
-<script type="math/tex">\mathbf{C}_{i,j} = \mathbf{A}_{i} \circ \mathbf{B}_{j}</script>,
-where <script type="math/tex">\mathbf{A}_i</script> is the i-th row of A and <script type="math/tex">\mathbf{B}_j</script> is the j-th row of B.</p>
+<p>Let \(\mathbf{A}\) be a \(m \times n\) matrix and \(\mathbf{B}\) be a \(p \times n\) matrix.
+We want a \(m \times p \times n\) tensor \(\mathbf{C}\) such that 
+\(\mathbf{C}_{i,j} = \mathbf{A}_{i} \circ \mathbf{B}_{j}\),
+where \(\mathbf{A}_i\) is the i-th row of A and \(\mathbf{B}_j\) is the j-th row of B.</p>
 
 <h2 id="solution">Solution</h2>
 <p>Assume we have the following matrices:</p>
@@ -187,7 +185,7 @@ is pretty cool after all.</p>
     <footer>
 
   <div class="wrapper">
-    &copy; Copyright 2018 Asish Ghoshal.
+    &copy; Copyright 2021 Asish Ghoshal.
     Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with a modified <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
 
     
@@ -202,20 +200,20 @@ is pretty cool after all.</p>
 <script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
 
 <!-- Load Common JS -->
-<script src="http://asishghoshal.com/assets/js/common.js"></script>
+<script src="http://asishghoshal.info/assets/js/common.js"></script>
 
 
 <!-- Load KaTeX -->
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js"></script>
-<script src="http://asishghoshal.com/assets/js/katex.js"></script>
+<script src="http://asishghoshal.info/assets/js/katex.js"></script>
 
 
 
 
 <!-- Include custom icon fonts -->
-<link rel="stylesheet" href="http://asishghoshal.com/assets/css/font-awesome.min.css">
-<link rel="stylesheet" href="http://asishghoshal.com/assets/css/academicons.min.css">
+<link rel="stylesheet" href="http://asishghoshal.info/assets/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://asishghoshal.info/assets/css/academicons.min.css">
 
 <!-- Google Analytics -->
 <script>
